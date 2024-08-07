@@ -1,0 +1,130 @@
+{
+  "testUser": [
+    {
+      "firstName": "testFirstName1",
+      "lastName": "testLastName1",
+      "password": "800890",
+      "email": "test1@email.com",
+      "records": [
+        {
+          "description": "test_description1",
+          "category": "test_category1",
+          "amount": 37874
+        },
+        {
+          "description": "test_description2",
+          "category": "test_category2",
+          "amount": 78435
+        },
+        {
+          "description": "test_description3",
+          "category": "test_category3",
+          "amount": 5667
+        },
+        {
+          "description": "test_description4",
+          "category": "test_category4",
+          "amount": 82437
+        }
+      ]
+    },
+    {
+      "firstName": "testFirstName2",
+      "lastName": "testLastName2",
+      "password": "800891",
+      "email": "test2@email.com",
+      "records": [
+        {
+          "description": "test_description1",
+          "category": "test_category1",
+          "amount": 342434
+        },
+        {
+          "description": "test_description2",
+          "category": "test_category2",
+          "amount": 2435
+        },
+        {
+          "description": "test_description3",
+          "category": "test_category3",
+          "amount": 89000
+        },
+        {
+          "description": "test_description4",
+          "category": "test_category4",
+          "amount": 2412037
+        }
+      ]
+    },
+    {
+      "firstName": "testFirstName3",
+      "lastName": "testLastName3",
+      "password": "800892",
+      "email": "test3@email.com"
+    },
+    {
+      "firstName": "testFirstName4",
+      "lastName": "testLastName4",
+      "password": "800893",
+      "email": "test4@email.com"
+    },
+    {
+      "firstName": "testFirstName5",
+      "lastName": "testLastName5",
+      "password": "800894",
+      "email": "test5@email.com"
+    },
+    {
+      "firstName": "testFirstName6",
+      "lastName": "testLastName6",
+      "password": "800895",
+      "email": "test6@email.com",
+      "records": [
+        {
+          "description": "test_description1",
+          "category": "test_category1",
+          "amount": 50
+        },
+        {
+          "description": "test_description2",
+          "category": "test_category2",
+          "amount": 2435
+        },
+        {
+          "description": "test_description3",
+          "category": "test_category3",
+          "amount": 14009
+        },
+        {
+          "description": "test_description4",
+          "category": "test_category4",
+          "amount": 1000
+        }
+      ]
+    },
+    {
+      "firstName": "testFirstName7",
+      "lastName": "testLastName7",
+      "password": "800896",
+      "email": "test7@email.com"
+    },
+    {
+      "firstName": "testFirstName8",
+      "lastName": "testLastName8",
+      "password": "800897",
+      "email": "test8@email.com"
+    },
+    {
+      "firstName": "testFirstName9",
+      "lastName": "testLastName9",
+      "password": "800898",
+      "email": "test9@email.com"
+    },
+    {
+      "firstName": "testFirstName10",
+      "lastName": "testLastName10",
+      "password": "800899",
+      "email": "test10@email.com"
+    }
+  ]
+}

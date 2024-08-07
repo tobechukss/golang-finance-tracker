@@ -1,0 +1,60 @@
+name: ci-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+env:
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: Password123
+  POSTGRES_DB: crud_db
+
+jobs:
+  build:
+    name: tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres
+        env:
+          POSTGRES_USER: ${{ env.POSTGRES_USER }}
+          POSTGRES_PASSWORD: ${{ env.POSTGRES_PASSWORD }}
+          POSTGRES_DB: ${{ env.POSTGRES_DB }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.22"
+
+      - name: Install dbmate for golang migrations
+        run: |
+          sudo curl -fsSL -o /usr/local/bin/dbmate https://github.com/amacneil/dbmate/releases/latest/download/dbmate-linux-amd64
+          sudo chmod +x /usr/local/bin/dbmate
+          which dbmate
+
+      - name: Construct DB URL
+        id: construct_url
+        run: echo "DB_URL=postgres://${{ env.POSTGRES_USER }}:${{ env.POSTGRES_PASSWORD }}@localhost:5432/${{ env.POSTGRES_DB }}?sslmode=disable" >> $GITHUB_ENV
+
+      - run: env
+
+      - name: Make Migrations
+        run: make migrations URL=${{ env.DB_URL }}
+
+      - name: Seed test DB
+        run: go run db/seed.go
+
+      - name: Test
+        run: make test
